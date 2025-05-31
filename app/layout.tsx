@@ -7,6 +7,8 @@ import {
   mantineHtmlProps,
 } from '@mantine/core';
 import { THEME } from '@/utils/theme';
+import { Header } from '@/components/layouts/header';
+import { Footer } from '@/components/layouts/footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,7 +26,11 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={THEME}>{children}</MantineProvider>
+        <div className='flex flex-col flex-1 border border-black max-w-[500px] w-screen'>
+          <Header />
+          <MantineProvider theme={THEME}>{children}</MantineProvider>
+          <Footer />
+        </div>
       </body>
     </html>
   );
