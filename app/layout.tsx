@@ -26,7 +26,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <div className='flex flex-col flex-1 border border-black max-w-[500px] w-screen'>
+        <div className='flex flex-col flex-1 border border-black max-w-[540px] w-screen'>
           <Header />
           <MantineProvider theme={THEME}>{children}</MantineProvider>
           <Footer />
