@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import '@mantine/core/styles.css';
 import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
 } from '@mantine/core';
-import { THEME } from '@/utils/theme';
-import { Header } from '@/components/layouts/header';
+import '@mantine/core/styles.css';
 import { Footer } from '@/components/layouts/footer';
+import { Header } from '@/components/layouts/header';
+import { THEME } from '@/shared/theme';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

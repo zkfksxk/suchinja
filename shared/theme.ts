@@ -1,5 +1,5 @@
-import { createTheme, DEFAULT_THEME } from '@mantine/core';
 import localFont from 'next/font/local';
+import { DEFAULT_THEME, createTheme } from '@mantine/core';
 
 export const pretendard = localFont({
   src: '../public/fonts/PretendardVariable.woff2',
