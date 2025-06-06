@@ -1,7 +1,22 @@
+import { Container, Title } from '@mantine/core';
+
 export const Header = () => {
   return (
-    <header className='flex h-[54px] w-full flex-col items-center justify-center border-b border-gray-800'>
-      연구소
-    </header>
+    <Container
+      w={{ base: '100%', sm: 540 }}
+      h='54px'
+      bg='blue'
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxSizing: 'border-box',
+        padding: '13px 16px',
+      }}
+    >
+      <Title order={1} c='white'>
+        수친자 테스트
+      </Title>
+    </Container>
   );
 };
