@@ -5,18 +5,18 @@ export const Footer = () => {
     <Container
       w={{ base: '100%', sm: 540 }}
       h='54px'
-      bg='blue'
+      bg='blue.1'
       style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
-      <Text>
+      <Text c='white'>
         © {`${new Date().getFullYear()} `}
         <Text span fw={600}>
           Karanta
-        </Text>{' '}
+        </Text>
         all rights reserved.
       </Text>
     </Container>

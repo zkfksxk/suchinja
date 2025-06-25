@@ -1,5 +1,11 @@
 import localFont from 'next/font/local';
-import { DEFAULT_THEME, MantineColorsTuple, createTheme } from '@mantine/core';
+import {
+  DEFAULT_THEME,
+  MantineColorsTuple,
+  colorsTuple,
+  createTheme,
+} from '@mantine/core';
+import classes from '../styles/typography.module.css';
 
 export const pretendard = localFont({
   src: '../public/fonts/PretendardVariable.woff2',
@@ -9,22 +15,36 @@ export const pretendard = localFont({
 });
 
 const blue: MantineColorsTuple = [
-  '#e7f5ff',
-  '#d1e6fd',
-  '#a1c9f9',
-  '#6facf6',
-  '#4793f3',
-  '#3083f2',
-  '#227bf3',
-  '#1669d9',
-  '#0763cf',
-  '#0050ac',
+  '#eaeaff',
+  '#d0d0ff',
+  '#9c9cfd',
+  '#6665fc',
+  '#3b37fb',
+  '#221bfb',
+  '#160dfc',
+  '#0902e1',
+  '#0000cd',
+  '#0000b1',
 ];
 
 export const THEME = createTheme({
   fontFamily: `${pretendard.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
   fontFamilyMonospace: 'Monaco, Courier, monospace',
   colors: {
+    black: colorsTuple('#353839'),
+    white: colorsTuple('#FAFAFA'),
     blue,
+  },
+  components: {
+    Text: {
+      classNames: {
+        root: classes.title,
+      },
+    },
+    Title: {
+      classNames: {
+        root: classes.title,
+      },
+    },
   },
 });

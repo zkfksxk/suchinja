@@ -1,4 +1,4 @@
-import { Container, Title } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 
 export const Header = () => {
   return (
@@ -14,9 +14,7 @@ export const Header = () => {
         padding: '13px 16px',
       }}
     >
-      <Title order={1} c='white'>
-        수친자 테스트
-      </Title>
+      <Text c='white'>수친자 테스트</Text>
     </Container>
   );
 };
