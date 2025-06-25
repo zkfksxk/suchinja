@@ -5,7 +5,7 @@ import {
   colorsTuple,
   createTheme,
 } from '@mantine/core';
-import classes from '../styles/typography.module.css';
+import classes from './styles/typography.module.css';
 
 export const pretendard = localFont({
   src: '../public/fonts/PretendardVariable.woff2',
@@ -31,7 +31,7 @@ export const THEME = createTheme({
   fontFamily: `${pretendard.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
   fontFamilyMonospace: 'Monaco, Courier, monospace',
   colors: {
-    black: colorsTuple('#353839'),
+    black: colorsTuple('#141414'),
     white: colorsTuple('#FAFAFA'),
     blue,
   },

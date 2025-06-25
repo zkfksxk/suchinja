@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | 수친자 테스트',
     default: SITE_CONFIG.title,
   },
-  description: '개발 지식과 경험을 공유하는 블로그입니다.',
+  description: SITE_CONFIG.description,
   openGraph: {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,

@@ -1,9 +1,10 @@
-import { Container, Text } from '@mantine/core';
+import { Container } from '@mantine/core';
+import { IoMdHome } from 'react-icons/io';
 
 export const Header = () => {
   return (
     <Container
-      w={{ base: '100%', sm: 540 }}
+      w={{ base: '100%', sm: 500 }}
       h='54px'
       bg='blue'
       style={{
@@ -14,7 +15,7 @@ export const Header = () => {
         padding: '13px 16px',
       }}
     >
-      <Text c='white'>수친자 테스트</Text>
+      <IoMdHome color='white' size={28} />
     </Container>
   );
 };
