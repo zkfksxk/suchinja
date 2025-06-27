@@ -6,7 +6,7 @@ export const Header = () => {
     <Container
       w={{ base: '100%', sm: 500 }}
       h='54px'
-      bg='blue'
+      bg='gray.9'
       style={{
         display: 'flex',
         alignItems: 'center',
