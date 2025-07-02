@@ -2,25 +2,20 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Button } from '@mantine/core';
+import { Button, Progress } from '@mantine/core';
 import { QUESTION_COUNT } from '@/shared/constant';
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const percent = Math.min((currentIndex / QUESTION_COUNT) * 100, 100);
 
   return (
     <main
-      className={`w-full flex flex-1 flex-col items-center justify-center`}
-      style={{ background: currentIndex === 0 ? '#0077F6' : '' }}
+      className={`max-w-[500px] w-screen flex flex-1 flex-col items-center bg-[#0077F6] px-3 ${currentIndex === 0 ? ' justify-center' : ''}`}
     >
       {currentIndex > 0 && (
-        <div className='w-full flex flex-col flex-1 relative'>
-          <div
-            className='absolute left-0 bottom-0 w-full bg-[#0077F6]'
-            style={{ height: `${(currentIndex / QUESTION_COUNT) * 100}%` }}
-          >
-            hello
-          </div>
+        <div className='mt-5 w-full'>
+          <Progress color='#0000B1' value={percent} />
         </div>
       )}
       {currentIndex === 0 && (
@@ -28,8 +23,8 @@ export default function Home() {
           <Image
             src='/images/home.png'
             alt='home image'
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className='rounded-xl'
           />
           <Button
