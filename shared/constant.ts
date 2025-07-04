@@ -10,7 +10,7 @@ export const QUESTION_COUNT = 10; //12~14까지 늘리기
 export const QUESTION_LIST: Questions = [
   {
     id: 1,
-    question: '선호하는 시간대는?',
+    question: '수영하기에 선호하는 시간대는?',
     answers: [
       { id: 1, text: '아침' },
       { id: 2, text: '저녁' },
@@ -28,6 +28,62 @@ export const QUESTION_LIST: Questions = [
   },
   {
     id: 3,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 4,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 5,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 6,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 7,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 8,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 9,
+    question: '수영을 못 가는 날이 생기면?',
+    answers: [
+      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+    ],
+  },
+  {
+    id: 10,
     question: '수영을 못 가는 날이 생기면?',
     answers: [
       { id: 1, text: '아쉬워서 계속 생각난다.' },
