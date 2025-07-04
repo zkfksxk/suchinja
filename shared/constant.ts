@@ -7,14 +7,14 @@ export const SITE_CONFIG = {
 
 export const QUESTION_COUNT = 10; //12~14까지 늘리기
 
-export const questionList: Questions = [
+export const QUESTION_LIST: Questions = [
   {
     id: 1,
     question: '선호하는 시간대는?',
     answers: [
       { id: 1, text: '아침' },
       { id: 2, text: '저녁' },
-      { id: 3, text: '그런 걸 따지다니. 언제든 옳아' },
+      { id: 3, text: '그런 걸 따지다니. 언제 하든 옳아' },
     ],
   },
   {
