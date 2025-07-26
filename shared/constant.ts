@@ -19,7 +19,7 @@ export const QUESTION_LIST: Questions = [
   },
   {
     id: 2,
-    question: '수영장 가기 직전, 내 기분은?',
+    question: '수영장 가기 직전, 나의 기분은?',
     answers: [
       { id: 1, text: '설레서 시간에 맞추어 준비한다.' },
       { id: 2, text: '밍기적거리다가 아슬아슬하게 도착한다.' },
@@ -36,10 +36,12 @@ export const QUESTION_LIST: Questions = [
   },
   {
     id: 4,
-    question: '수영을 못 가는 날이 생기면?',
+    question: '다음 달 여름휴가 계획 중입니다. 당신의 선택은?',
     answers: [
-      { id: 1, text: '아쉬워서 계속 생각난다.' },
-      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+      { id: 1, text: '숙소를 예약할 때 수영장이 있는지 확인한다.' },
+      { id: 2, text: '현지 수영장을 검색한다.' },
+      { id: 3, text: '자연이 최고죠! 바다나 계곡을 고려한다.' },
+      { id: 4, text: '무슨 휴가까지 와서 수영이야.' },
     ],
   },
   {

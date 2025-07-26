@@ -30,6 +30,23 @@ export default function Home() {
     }
   };
 
+  const handleShare = async () => {
+    const url = window.location.href;
+
+    if (!navigator.clipboard) {
+      alert('이 브라우저에서는 클립보드 복사가 지원되지 않습니다.');
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      alert('클립보드에 링크가 복사되었습니다.');
+    } catch (error) {
+      if (error instanceof Error)
+        alert('공유하기 실패: ' + (error?.message || '알 수 없는 오류'));
+    }
+  };
+
   return (
     <main
       className={`relative max-w-[500px] w-screen flex flex-1 flex-col items-center bg-[#0077F6] px-3 ${currentIndex === 0 ? ' justify-center' : ''}`}
@@ -88,7 +105,7 @@ export default function Home() {
         </div>
       )}
       {currentIndex === 0 && (
-        <div className='flex flex-col gap-7'>
+        <div className='flex flex-col gap-10'>
           <Image
             src='/images/home.png'
             alt='home image'
@@ -96,15 +113,36 @@ export default function Home() {
             height={300}
             className='rounded-xl'
           />
-          <Button
-            variant='filled'
-            color='blue.9'
-            size='xl'
-            radius='md'
-            onClick={() => setCurrentIndex(1)}
-          >
-            시작하기
-          </Button>
+          <div className='flex flex-col gap-5'>
+            <Button
+              variant='filled'
+              color='blue.9'
+              size='xl'
+              radius='md'
+              onClick={() => setCurrentIndex(1)}
+            >
+              시작하기
+            </Button>
+            <Button
+              variant='filled'
+              color='white'
+              size='xl'
+              radius='md'
+              styles={{
+                root: {
+                  color: '#0000b1',
+                  backgroundColor: '#fff',
+                  '&:hover': {
+                    backgroundColor: '#f3f3f3',
+                    color: '#0000b1',
+                  },
+                },
+              }}
+              onClick={handleShare}
+            >
+              테스트 공유하기
+            </Button>
+          </div>
         </div>
       )}
     </main>
