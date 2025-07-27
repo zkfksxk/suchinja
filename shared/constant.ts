@@ -12,9 +12,9 @@ export const QUESTION_LIST: Questions = [
     id: 1,
     question: '수영하기에 선호하는 시간대는?',
     answers: [
-      { id: 1, text: '아침' },
-      { id: 2, text: '저녁' },
-      { id: 3, text: '그런 걸 따지다니. 언제 하든 옳아' },
+      { id: 1, text: '새벽 수영이죠.' },
+      { id: 2, text: '아침 수영이죠. 하루를 알차게 시작하는 느낌이 좋아요.' },
+      { id: 3, text: '저녁 수영이죠.' },
     ],
   },
   {
@@ -30,7 +30,7 @@ export const QUESTION_LIST: Questions = [
     id: 3,
     question: '수영을 못 가는 날이 생기면?',
     answers: [
-      { id: 1, text: '아쉬워서 계속 생각난다.' },
+      { id: 1, text: '아쉬워서 주중/주말에 하루 더 투자한다.' },
       { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
     ],
   },
@@ -46,26 +46,27 @@ export const QUESTION_LIST: Questions = [
   },
   {
     id: 5,
-    question: '수영을 못 가는 날이 생기면?',
+    question: '수영을 위해 새벽에 줄을 서본 적이 있나?',
     answers: [
-      { id: 1, text: '아쉬워서 계속 생각난다.' },
-      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+      { id: 1, text: '수(水)강신청 성공을 위해 알람 2개 맞추고 대기함' },
+      { id: 2, text: '아니, 그렇게까지 해본 적 없어.' },
     ],
   },
   {
     id: 6,
-    question: '수영을 못 가는 날이 생기면?',
+    question: '수영을 위해 가장 많이 투자하는 부분은?',
     answers: [
-      { id: 1, text: '아쉬워서 계속 생각난다.' },
-      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+      { id: 1, text: '시간이죠. 일상이 수영을 중심으로 돌아가요.' },
+      { id: 2, text: '머니머니해도 돈! 특히 새 수영복은 참을 수 없다구' },
     ],
   },
   {
     id: 7,
-    question: '수영을 못 가는 날이 생기면?',
+    question: '다른 지역의 수영장을 찾아가 본 적이 있나?',
     answers: [
-      { id: 1, text: '아쉬워서 계속 생각난다.' },
-      { id: 2, text: '다음에 가지 뭐 하고 넘긴다.' },
+      { id: 1, text: '나만의 원정 수영이 DB가 있어' },
+      { id: 2, text: '동네 수영장 정도 방문한 적 있어.' },
+      { id: 4, text: '지금 다니는 수영장도 솔직히 좀 귀찮아.' },
     ],
   },
   {
