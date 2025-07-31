@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Button, Progress, Text } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import CopySuccessModal from '@/components/common/CopySuccessModal';
 import { QUESTION_COUNT, QUESTION_LIST } from '@/shared/constant';
 
 export default function Home() {
@@ -11,6 +13,9 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedQuestionIdAnswerIdMap, setSelectedQuestionIdAnswerIdMap] =
     useState<Record<number, number>>({});
+  const [copyModalOpened, { open: copyModalOpen, close: copyModalClose }] =
+    useDisclosure(false);
+
   const percent = Math.min((currentIndex / QUESTION_COUNT) * 100, 100);
   const currentQuestion = QUESTION_LIST.find((q) => q.id === currentIndex);
 
@@ -40,7 +45,7 @@ export default function Home() {
 
     try {
       await navigator.clipboard.writeText(url);
-      alert('클립보드에 링크가 복사되었습니다.');
+      copyModalOpen();
     } catch (error) {
       if (error instanceof Error)
         alert('공유하기 실패: ' + (error?.message || '알 수 없는 오류'));
@@ -48,39 +53,40 @@ export default function Home() {
   };
 
   return (
-    <main
-      className={`relative max-w-[500px] w-screen flex flex-1 flex-col items-center bg-[#0077F6] px-3 ${currentIndex === 0 ? ' justify-center' : ''}`}
-    >
-      {currentIndex > 0 && (
-        <Progress
-          color='#0000B1'
-          value={percent}
-          className='absolute left-0 top-[30px] w-full'
-        />
-      )}
+    <Fragment>
+      <main
+        className={`relativ max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-3 ${currentIndex === 0 ? ' justify-center' : ''}`}
+      >
+        {currentIndex > 0 && (
+          <Progress
+            color='#0000B1'
+            value={percent}
+            className='absolute left-0 top-[30px] w-full'
+          />
+        )}
 
-      {currentIndex > 0 && (
-        <div
-          className='absolute left-1/2 top-1/2 w-full max-w-[450px]'
-          style={{ transform: 'translate(-50%, -50%)' }}
-        >
-          <div className='flex flex-col w-full border border-yellow-500'>
-            <Text
-              c='white'
-              style={{
-                fontSize: '1.8rem',
-                fontWeight: 800,
-              }}
-            >{`Q.${currentIndex} ${currentQuestion?.question}`}</Text>
+        {currentIndex > 0 && (
+          <div
+            className='absolute left-1/2 top-1/2 w-full max-w-[450px]'
+            style={{ transform: 'translate(-50%, -50%)' }}
+          >
+            <div className='flex flex-col w-full border border-yellow-500'>
+              <Text
+                c='white'
+                style={{
+                  fontSize: '1.8rem',
+                  fontWeight: 800,
+                }}
+              >{`Q.${currentIndex} ${currentQuestion?.question}`}</Text>
 
-            <div className='mt-[100px] flex flex-col gap-3'>
-              {currentQuestion?.answers.map((answer) => (
-                <Text
-                  key={answer.id}
-                  onClick={() =>
-                    handleAnswerClick(currentQuestion.id, answer.id)
-                  }
-                  className={`
+              <div className='mt-[100px] flex flex-col gap-3'>
+                {currentQuestion?.answers.map((answer) => (
+                  <Text
+                    key={answer.id}
+                    onClick={() =>
+                      handleAnswerClick(currentQuestion.id, answer.id)
+                    }
+                    className={`
                   flex
                   justify-center
                   items-center
@@ -96,55 +102,57 @@ export default function Home() {
                   hover:bg-[#0000b1]
                   hover:!text-white
                 `}
-                >
-                  {answer.text}
-                </Text>
-              ))}
+                  >
+                    {answer.text}
+                  </Text>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      {currentIndex === 0 && (
-        <div className='flex flex-col gap-10'>
-          <Image
-            src='/images/home.png'
-            alt='home image'
-            width={300}
-            height={300}
-            className='rounded-xl'
-          />
-          <div className='flex flex-col gap-5'>
-            <Button
-              variant='filled'
-              color='blue.9'
-              size='xl'
-              radius='md'
-              onClick={() => setCurrentIndex(1)}
-            >
-              시작하기
-            </Button>
-            <Button
-              variant='filled'
-              color='white'
-              size='xl'
-              radius='md'
-              styles={{
-                root: {
-                  color: '#0000b1',
-                  backgroundColor: '#fff',
-                  '&:hover': {
-                    backgroundColor: '#f3f3f3',
+        )}
+        {currentIndex === 0 && (
+          <div className='flex flex-col gap-10'>
+            <Image
+              src='/images/home.png'
+              alt='home image'
+              width={300}
+              height={300}
+              className='rounded-xl'
+            />
+            <div className='flex flex-col gap-5'>
+              <Button
+                variant='filled'
+                color='blue.9'
+                size='xl'
+                radius='md'
+                onClick={() => setCurrentIndex(1)}
+              >
+                시작하기
+              </Button>
+              <Button
+                variant='filled'
+                color='white'
+                size='xl'
+                radius='md'
+                styles={{
+                  root: {
                     color: '#0000b1',
+                    backgroundColor: '#fff',
+                    '&:hover': {
+                      backgroundColor: '#f3f3f3',
+                      color: '#0000b1',
+                    },
                   },
-                },
-              }}
-              onClick={handleShare}
-            >
-              테스트 공유하기
-            </Button>
+                }}
+                onClick={handleShare}
+              >
+                테스트 공유하기
+              </Button>
+            </div>
           </div>
-        </div>
-      )}
-    </main>
+        )}
+      </main>
+      <CopySuccessModal opened={copyModalOpened} onClose={copyModalClose} />
+    </Fragment>
   );
 }
