@@ -7,6 +7,7 @@ import { Button, Progress, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import CopySuccessModal from '@/components/common/CopySuccessModal';
 import { QUESTION_COUNT, QUESTION_LIST } from '@/shared/constant';
+import { calculateScore } from '@/shared/utils/suchinja';
 
 export default function Home() {
   const router = useRouter();
@@ -30,8 +31,8 @@ export default function Home() {
         setCurrentIndex(currentIndex + 1);
       }, 300);
     } else {
-      router.push('/result');
-      console.log(selectedQuestionIdAnswerIdMap);
+      const finalScore = calculateScore(selectedQuestionIdAnswerIdMap);
+      router.push(`/result?score=${finalScore}`);
     }
   };
 
