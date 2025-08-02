@@ -1,4 +1,4 @@
-import { Questions } from './types';
+import { Questions, Result } from './types';
 
 export const SITE_CONFIG = {
   title: '수친자 테스트',
@@ -101,5 +101,38 @@ export const QUESTION_LIST: Questions = [
       { id: 2, text: '가끔 사용하는데 좀 어색하다.', score: 3 },
       { id: 3, text: '다리에 쥐 날 거 같아서 안 쓴다.', score: 0 },
     ],
+  },
+];
+
+export const RESULT_LIST: Result[] = [
+  {
+    level: 10,
+    title: '물이 무서운 맥주병',
+    description: '수영의 매력을 모르는 당신 아쉬워요.',
+  },
+  {
+    level: 20,
+    title: '귀여운 수린이',
+    description: '수영의 매력에 막 발을 담근 귀여운 초보',
+  },
+  {
+    level: 30,
+    title: '성실한 좀비',
+    description: '',
+  },
+  {
+    level: 40,
+    title: '물이 무서운 맥주병',
+    description: '',
+  },
+  {
+    level: 50,
+    title: '물이 무서운 맥주병',
+    description: '',
+  },
+  {
+    level: 60,
+    title: '수중 생물',
+    description: '물속이 제 2의 고향',
   },
 ];

@@ -6,8 +6,12 @@ import { useRouter } from 'next/navigation';
 import { Button, Progress, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import CopySuccessModal from '@/components/common/CopySuccessModal';
-import { QUESTION_COUNT, QUESTION_LIST } from '@/shared/constant';
-import { calculateScore } from '@/shared/utils/suchinja';
+import {
+  QUESTION_COUNT,
+  QUESTION_LIST,
+  RESULT_LIST,
+} from '@/shared/content/swimming/constant';
+import { calculateScore } from '@/shared/content/swimming/utils';
 
 export default function Home() {
   const router = useRouter();
@@ -32,7 +36,10 @@ export default function Home() {
       }, 300);
     } else {
       const finalScore = calculateScore(selectedQuestionIdAnswerIdMap);
-      router.push(`/result?score=${finalScore}`);
+      const result = RESULT_LIST.find((result) => finalScore <= result.level);
+      const level = result?.level || RESULT_LIST[0].level;
+
+      router.push(`/result?level=${level}`);
     }
   };
 

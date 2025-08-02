@@ -1,15 +1,26 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Button, Text } from '@mantine/core';
+import { RESULT_LIST } from '@/shared/content/swimming/constant';
 
-export default function Result() {
+export default function ResultPage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
-  const score = searchParams.get('score');
+  const level = searchParams.get('level');
+  const levelNum = parseInt(level || '0');
+
+  const result =
+    RESULT_LIST.find((r) => r.level === levelNum) || RESULT_LIST[0];
 
   return (
     <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-3'>
-      <Text c='white'>{score}</Text>
+      <Text c='white' size='xl' fw={700} mb='md'>
+        {result.title}
+      </Text>
+      <Text c='white' size='lg' mb='xl' ta='center'>
+        {result.description}
+      </Text>
       <div className='flex flex-col gap-5'>
         <Button variant='filled' color='blue.9' size='xl' radius='md'>
           결과 공유하기
@@ -29,8 +40,9 @@ export default function Result() {
               },
             },
           }}
+          onClick={() => router.push('/result/list')}
         >
-          전체결과 확인하기
+          전체 결과 확인하기
         </Button>
       </div>
     </main>

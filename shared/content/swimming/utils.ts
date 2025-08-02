@@ -1,4 +1,4 @@
-import { QUESTION_LIST } from '../constant';
+import { QUESTION_LIST } from './constant';
 
 export const calculateScore = (
   selectedAnswers: Record<number, number>

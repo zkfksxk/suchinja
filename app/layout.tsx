@@ -7,8 +7,8 @@ import {
 import '@mantine/core/styles.css';
 import { Footer } from '@/components/layouts/footer';
 import { Header } from '@/components/layouts/header';
-import { SITE_CONFIG } from '@/shared/constant';
-import { THEME } from '@/shared/theme';
+import { THEME } from '@/shared/common/theme';
+import { SITE_CONFIG } from '@/shared/content/swimming/constant';
 import './globals.css';
 
 export const metadata: Metadata = {

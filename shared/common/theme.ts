@@ -8,7 +8,7 @@ import {
 import classes from './styles/typography.module.css';
 
 export const pretendard = localFont({
-  src: '../public/fonts/PretendardVariable.woff2',
+  src: '../../public/fonts/PretendardVariable.woff2',
   display: 'swap',
   variable: '--font-pretandard',
   weight: '45 920',

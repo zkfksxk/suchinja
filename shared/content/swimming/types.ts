@@ -11,3 +11,9 @@ export type Question = {
 };
 
 export type Questions = Question[];
+
+export type Result = {
+  level: number;
+  title: string;
+  description: string;
+};
