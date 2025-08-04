@@ -118,17 +118,17 @@ export const RESULT_LIST: Result[] = [
   {
     level: 30,
     title: '성실한 좀비',
-    description: '',
+    description: '취미생활',
   },
   {
     level: 40,
     title: '물이 무서운 맥주병',
-    description: '',
+    description: '마스터즈',
   },
   {
     level: 50,
     title: '물이 무서운 맥주병',
-    description: '',
+    description: '수영의신',
   },
   {
     level: 60,

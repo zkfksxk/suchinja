@@ -40,7 +40,7 @@ export default function ResultPage() {
               },
             },
           }}
-          onClick={() => router.push('/result/list')}
+          onClick={() => router.push('/content/suchinja/result/list')}
         >
           전체 결과 확인하기
         </Button>
