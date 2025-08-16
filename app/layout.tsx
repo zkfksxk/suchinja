@@ -12,6 +12,9 @@ import { SITE_CONFIG } from '@/shared/content/swimming/constant';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  ),
   title: {
     template: '%s | 수친자 테스트',
     default: SITE_CONFIG.title,
@@ -22,9 +25,19 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     siteName: SITE_CONFIG.title,
     type: 'website',
+    images: [
+      {
+        url: '/thumbnail.png',
+        width: 1200,
+        height: 630,
+        alt: SITE_CONFIG.image_alt,
+      },
+    ],
   },
   icons: {
-    icon: 'favicon.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
   other: {
     google: 'notranslate',

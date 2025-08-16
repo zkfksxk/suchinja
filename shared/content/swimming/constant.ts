@@ -1,8 +1,10 @@
 import { Questions, Result } from './types';
 
 export const SITE_CONFIG = {
+  domain: 'http://localhost:3000',
   title: '수친자 테스트',
   description: '내가 수영을 사랑하는 정도는?',
+  image_alt: '내가 수영을 사랑하는 정도는?',
 };
 
 export const QUESTION_COUNT = 10; //12~14까지 늘리기
