@@ -3,15 +3,16 @@
 import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Button, Progress, Text } from '@mantine/core';
+import { ActionIcon, Button, Progress, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import CopySuccessModal from '@/components/common/CopySuccessModal';
 import {
   QUESTION_COUNT,
   QUESTION_LIST,
   RESULT_LIST,
-} from '@/shared/content/swimming/constant';
-import { calculateScore } from '@/shared/content/swimming/utils';
+} from '@/shared/contents/swimming/constant';
+import { calculateScore } from '@/shared/contents/swimming/utils';
 
 export default function SuchinjaPage() {
   const router = useRouter();
@@ -60,40 +61,50 @@ export default function SuchinjaPage() {
     }
   };
 
+  const handleBack = () => {
+    setCurrentIndex(currentIndex - 1);
+  };
+
   return (
     <Fragment>
       <main
-        className={`relativ max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-3 ${currentIndex === 0 ? ' justify-center' : ''}`}
+        className={`relative max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-5 ${currentIndex === 0 ? ' justify-center' : ''}`}
       >
         {currentIndex > 0 && (
-          <Progress
-            color='#0000B1'
-            value={percent}
-            className='absolute left-0 top-[30px] w-full'
-          />
+          <div className='flex flex-row w-full items-center gap-4 mt-10'>
+            <ActionIcon
+              size={24}
+              variant='transparent'
+              aria-label='뒤로가기'
+              onClick={handleBack}
+            >
+              <IoMdArrowRoundBack color='black' size={24} />
+            </ActionIcon>
+
+            <Progress color='#0000B1' value={percent} className=' w-full' />
+          </div>
         )}
 
         {currentIndex > 0 && (
           <div
-            className='absolute left-1/2 top-1/2 w-full max-w-[450px]'
+            className='absolute left-1/2 top-1/2 w-full px-3'
             style={{ transform: 'translate(-50%, -50%)' }}
           >
-            <div className='flex flex-col w-full border border-yellow-500'>
+            <div className='flex flex-col gap-5'>
               <Text
                 c='white'
-                style={{
-                  fontSize: '1.8rem',
-                  fontWeight: 800,
-                }}
+                variant='subtitle-b-14'
               >{`Q.${currentIndex} ${currentQuestion?.question}`}</Text>
 
-              <div className='mt-[100px] flex flex-col gap-3'>
+              <div className='flex flex-col gap-3'>
                 {currentQuestion?.answers.map((answer) => (
                   <Text
                     key={answer.id}
                     onClick={() =>
                       handleAnswerClick(currentQuestion.id, answer.id)
                     }
+                    c='black'
+                    variant='text-b-10'
                     className={`
                   flex
                   justify-center
@@ -103,9 +114,6 @@ export default function SuchinjaPage() {
                   h-[72px]
                   rounded-md
                   text-center
-                  text-black
-                  text-2xl
-                  font-extrabold
                   cursor-pointer
                   hover:bg-[#0000b1]
                   hover:!text-white

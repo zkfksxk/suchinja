@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button, Text } from '@mantine/core';
-import { RESULT_LIST } from '@/shared/content/swimming/constant';
+import { RESULT_LIST } from '@/shared/contents/swimming/constant';
 
 export default function ResultPage() {
   const router = useRouter();

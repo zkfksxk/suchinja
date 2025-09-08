@@ -8,13 +8,11 @@ import '@mantine/core/styles.css';
 import { Footer } from '@/components/layouts/footer';
 import { Header } from '@/components/layouts/header';
 import { THEME } from '@/shared/common/theme';
-import { SITE_CONFIG } from '@/shared/content/swimming/constant';
+import { SITE_CONFIG } from '@/shared/contents/swimming/constant';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-  ),
+  metadataBase: new URL(SITE_CONFIG.domain),
   title: {
     template: '%s | 수친자 테스트',
     default: SITE_CONFIG.title,
