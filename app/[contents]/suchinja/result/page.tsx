@@ -14,13 +14,19 @@ export default function ResultPage() {
     RESULT_LIST.find((r) => r.level === levelNum) || RESULT_LIST[0];
 
   return (
-    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-3'>
-      <Text c='white' size='xl' fw={700} mb='md'>
+    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-5 pt-8'>
+      <Text c='white' variant='subtitle-b-14' mb='md'>
         {result.title}
       </Text>
-      <Text c='white' size='lg' mb='xl' ta='center'>
-        {result.description}
-      </Text>
+      <ul className='bg-white mb-15 list-disc list-outside p-8 space-y-2 w-full max-w-[350px] rounded-lg'>
+        {result.description.map((item, index) => (
+          <li key={index}>
+            <Text c='black' variant='text-r-10'>
+              {item}
+            </Text>
+          </li>
+        ))}
+      </ul>
       <div className='flex flex-col gap-5'>
         <Button variant='filled' color='blue.9' size='xl' radius='md'>
           결과 공유하기
