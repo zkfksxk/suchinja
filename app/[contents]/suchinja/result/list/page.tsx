@@ -13,15 +13,15 @@ export default function ResultListPage() {
   };
 
   return (
-    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-3 pt-8'>
+    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-5 py-8'>
       <Text c='white' variant='subtitle-b-14'>
         전체 결과
       </Text>
-      <div className='space-y-4 w-full'>
+      <div className='space-y-4 w-full mt-5'>
         {RESULT_LIST.map((result, index) => (
           <div
             key={index}
-            className='flex gap-2 p-4 bg-white rounded-lg'
+            className='flex gap-2 p-4 bg-white rounded-lg cursor-pointer'
             onClick={() => handleResultClick(result.level)}
           >
             <Image
