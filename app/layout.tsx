@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/thumbnail.png',
+        url: SITE_CONFIG.thumbnail,
         width: 1200,
         height: 630,
         alt: SITE_CONFIG.image_alt,

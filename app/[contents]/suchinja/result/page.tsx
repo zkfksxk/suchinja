@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button, Text } from '@mantine/core';
 import { RESULT_LIST } from '@/shared/contents/swimming/constant';
@@ -14,11 +15,21 @@ export default function ResultPage() {
     RESULT_LIST.find((r) => r.level === levelNum) || RESULT_LIST[0];
 
   return (
-    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-5 pt-8'>
-      <Text c='white' variant='subtitle-b-14' mb='md'>
-        {result.title}
-      </Text>
-      <ul className='bg-white mb-15 list-disc list-outside p-8 space-y-2 w-full max-w-[350px] rounded-lg'>
+    <main className='max-w-[500px] w-full mx-auto flex flex-1 flex-col items-center bg-[#0077F6] px-5 py-8'>
+      <div className='flex flex-col gap-5 items-center'>
+        <Text c='white' variant='subtitle-b-14'>
+          {result.title}
+        </Text>
+        <Image
+          src={result.image}
+          alt='결과 이미지'
+          width={250}
+          height={250}
+          className='rounded-xl border-2 border-white shadow-lg mb-8'
+        />
+      </div>
+
+      <ul className='bg-white mb-8 list-disc list-outside p-8 space-y-2 w-full max-w-[350px] rounded-lg'>
         {result.description.map((item, index) => (
           <li key={index}>
             <Text c='black' variant='text-r-10'>

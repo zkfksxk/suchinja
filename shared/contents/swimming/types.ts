@@ -17,4 +17,5 @@ export type Result = {
   title: string;
   subtitle: string;
   description: string[];
+  image: string;
 };
