@@ -129,7 +129,7 @@ export default function SuchinjaPage() {
         {currentIndex === 0 && (
           <div className='flex flex-col gap-10'>
             <Image
-              src='/images/home.png'
+              src='/images/suchinja/home.png'
               alt='home image'
               width={300}
               height={300}
