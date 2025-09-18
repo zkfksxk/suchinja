@@ -1,7 +1,7 @@
 import { Questions, Result } from './types';
 
 export const SITE_CONFIG = {
-  domain: 'http://localhost:3000',
+  domain: 'https://suchinja.vercel.app',
   thumbnail: 'images/suchinja/thumbnail.png',
   title: '수친자 테스트',
   description: '내가 수영을 사랑하는 정도는?',
@@ -158,7 +158,7 @@ export const RESULT_LIST: Result[] = [
     ],
   },
   {
-    level: 65,
+    level: 60,
     title: '성실한 좀비',
     subtitle: '늘 같은 시간대에 출몰. 느리지만 꾸준함',
     image: '/images/suchinja/zombie.png',
@@ -172,16 +172,16 @@ export const RESULT_LIST: Result[] = [
     ],
   },
   {
-    level: 83,
+    level: 80,
     title: '여유로운 낭만러',
     subtitle: '수영 없인 삶이 허전',
     image: '/images/suchinja/nangman.png',
     description: [
       '영법에 익숙해져서 여유와 선호가 생김',
-      '물속에서 나만의 리듬이 생김',
-      '오리발, 스노클 등 새로운 재미를 탐구 중',
+      '물속에서 나만의 리듬 생김',
+      '자유도가 높아지면서 새로운 재미(바다수영, 스쿠버/프리다이빙...)를 탐구',
       '여행 코스에 꼭 물과 관련된 걸 집어넣음',
-      '물로 맺어진 소중한 인연들이 있음',
+      '수영으로 맺어진 소중한 인연들이 있음',
     ],
   },
   {
@@ -192,10 +192,9 @@ export const RESULT_LIST: Result[] = [
     description: [
       '영법 올라운더. 대체로 마스터반에 속해 있음',
       '“오늘은 얼마나 가볼까?” 스스로 미션을 부여하고 도전',
-      '수영 앱으로 거리, 시간을 꼼꼼하게 기록',
-      'PB(개인 최고 기록) 갱신하면 짜릿한 행복을 느낌',
+      '수영 관련 도구로 꼼꼼하게 기록',
       '사계절 수영 러버. 한겨울 수영도 색다른 매력',
-      '물을 보면 나도 모르게 고개가 돌아감',
+      '자유 시간? 자유 수영하는 날!',
     ],
   },
 ];
