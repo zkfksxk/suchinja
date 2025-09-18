@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   image_alt: '내가 수영을 사랑하는 정도는?',
 };
 
-export const QUESTION_COUNT = 10; //12~14까지 늘리기
+export const QUESTION_COUNT = 11; //12~14까지 늘리기
 
 export const QUESTION_LIST: Questions = [
   {
