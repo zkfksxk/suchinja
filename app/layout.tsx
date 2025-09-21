@@ -5,6 +5,7 @@ import {
   mantineHtmlProps,
 } from '@mantine/core';
 import '@mantine/core/styles.css';
+import { Analytics } from '@vercel/analytics/next';
 import { Footer } from '@/components/layouts/footer';
 import { Header } from '@/components/layouts/header';
 import { THEME } from '@/shared/common/theme';
@@ -58,6 +59,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </MantineProvider>
+        <Analytics />
       </body>
     </html>
   );
